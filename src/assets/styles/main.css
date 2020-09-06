@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Signika:400,300,600,700|Roboto:400italic,300,700,400&display=swap');
+
+body {
+    @apply text-current
+}
+
+/* Headings */
+h1 {
+    @apply w-full text-white text-4xl font-serif leading-none
+}
+
+h2 {
+    @apply w-full text-white text-3xl font-serif leading-none
+}
+
+h3 {
+    @apply w-full text-white text-2xl font-serif leading-none
+}
+
+.map {
+    height: 50vh;
+    min-height: 40rem;
+}
+
+.content {
+    @apply px-6 py-10;
+}
+.content-gray {
+    @apply content;
+    background-color: #f4f3f0;
+}
+
+/* Buttons */
+.btn {
+    @apply border-2 px-8 py-2 text-lg
+}
+
+.btn-white {
+    @apply bg-white border-white text-white
+}
+
+.btn-transparent {
+    @apply bg-transparent border-white text-white
+}
+
+.btn-white:hover,
+.btn-transparent:hover {
+    @apply bg-white text-green
+}
+
+.btn-green {
+    @apply bg-green border-green text-white
+}
+
+.btn-green:hover {
+    @apply bg-white text-green
+}

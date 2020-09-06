@@ -1,5 +1,9 @@
 # bikewalkroll4
 
+Front-end rebuild of bikewalkroll. 
+
+# Development
+
 ## Project setup
 ```
 yarn install
@@ -25,5 +29,3 @@ yarn run test
 yarn run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

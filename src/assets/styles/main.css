@@ -10,15 +10,19 @@ body {
 
 /* Headings */
 h1 {
-    @apply w-full text-white text-4xl font-serif leading-none
+    @apply w-full text-4xl font-serif leading-none
 }
 
 h2 {
-    @apply w-full text-white text-3xl font-serif leading-none
+    @apply w-full text-3xl font-serif leading-none
 }
 
 h3 {
-    @apply w-full text-white text-2xl font-serif leading-none
+    @apply w-full text-2xl font-serif leading-none
+}
+
+h4 {
+    @apply w-full text-lg font-serif leading-none
 }
 
 .map {
@@ -58,4 +62,12 @@ h3 {
 
 .btn-green:hover {
     @apply bg-white text-green
+}
+
+ul.school-list li a {
+    @apply block py-2 border-b 
+}
+
+ul.school-list li:last-of-type a {
+    @apply pb-0 border-none
 }

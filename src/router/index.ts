@@ -24,12 +24,15 @@ const routes: RouteConfig[] = [
   {
     path: '/school/:id(\\d+)',
     component: School,
+    name: 'school',
   },
   {
     path: '*',
     component: NotFound,
     meta: {
       title: 'Page Not Found | BikeWalkRoll',
+      // I don't believe Vue Router is able to send a proper 404 header.
+      // this blocks bots and should have the same effect.
       metaTags: [{
         name: 'robots',
         content: 'noindex',

@@ -1,22 +1,29 @@
 <template>
   <div>
-    <HeaderNav></HeaderNav>
-    <div>
-      <h1 class="font-serif">Not Found Sorry</h1>
-    </div>
-    <Footer></Footer>
+      <SubHeader 
+      title="Page Not Found"
+      subTitle=""
+      buttonText=""
+      buttonLink=""
+    ></SubHeader>
+    <ContentMain
+      title="Sorry About That"
+      :dark=true
+    >
+      <p>Please try again </p>
+    </ContentMain>
   </div>
-
 </template>
 
 <script>
-import HeaderNav from '@/components/header/HeaderNav.vue';
-import Footer from '@/components/Footer.vue';
+import SubHeader from '@/components/header/SubHeader.vue';
+import ContentMain from '@/components/content/Main.vue';
 
 export default {
   name: 'NotFound',
   components: {
-    HeaderNav,
+    SubHeader,
+    ContentMain,
   },
 };
 </script>

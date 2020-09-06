@@ -1,7 +1,7 @@
 <template>
   <nav class="flex items-center justify-between flex-wrap p-6">
     <div class="flex items-center flex-shrink-0 mr-6">
-      <img src="https://bikewalkroll.org/img/logo-v2.png" alt="BikeWalkRoll Logo" />
+      <router-link to="/"><img src="https://bikewalkroll.org/img/logo-v2.png" alt="BikeWalkRoll Logo" /></router-link>
     </div>
     <!-- <div class="block lg:hidden">
       <button
@@ -22,6 +22,9 @@
         <div>
             <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
     </div>-->
+    <div>
+      <router-link to="/about">About Test</router-link>
+    </div>
   </nav>
 </template>
 

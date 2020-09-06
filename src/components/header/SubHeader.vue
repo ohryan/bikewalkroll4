@@ -2,7 +2,7 @@
     <div class="bg-green px-6" style="background-image: url(https://bikewalkroll.org/img/subhead-bg.jpg);">
         <div class="flex flex-wrap py-10 items-center max-w-screen-xl m-auto">
             <div class="w-full md:w-2/3 lg:3/4 text-left">
-                <h1>{{ title }}</h1>
+                <h1 class="text-white">{{ title }}</h1>
                 <p class="text-white" v-if="subTitle">{{ subTitle }}</p>
             </div>
             <div class="w-full md:w-1/3 lg:1/4 text-right">

@@ -1,12 +1,21 @@
 <template>
-    <router-view></router-view>
+    <div id="app">
+        <HeaderNav></HeaderNav>
+        <router-view></router-view>
+        <Footer></Footer>
+    </div>
 </template>
 
-<script lang="ts">
+<script>
+import HeaderNav from '@/components/header/HeaderNav.vue';
+import Footer from '@/components/Footer.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
-export default class App extends Vue {}
+export default {
+    name: 'App',
+    components: {
+        HeaderNav,
+        Footer,
+    },
+};
 </script>
-
-<style lang="scss">
-</style>

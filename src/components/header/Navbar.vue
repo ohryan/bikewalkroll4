@@ -1,9 +1,6 @@
 <template>
-  <header class="py-3 px-2 sm:flex sm:justify-between sm:items-center">
+  <header class="py-3 px-6 sm:flex sm:justify-between sm:items-center">
     <div class="flex items-center justify-between">
-      <div>
-        <router-link to="/"><img src="https://bikewalkroll.org/img/logo-v2.png" alt="BikeWalkRoll Logo" /></router-link>
-      </div>
       <div class="sm:hidden">
         <button @click="isOpen = !isOpen" type="button" class="block text-default hover:text-green focus:text-green focus:outline-none">
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -11,17 +8,23 @@
             <path v-if="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
           </svg>
         </button>      
+      </div>      
+      <div>
+        <router-link to="/" @click.native="isOpen = false"><img src="https://bikewalkroll.org/img/logo-v2.png" alt="BikeWalkRoll Logo" /></router-link>
+      </div>
+      <div class="sm:hidden">
+        <router-link to="/" class="py-3 font-thin text-green">Sign In</router-link>
       </div>
     </div>
-    <nav :class="isOpen ? 'block' : 'hidden'" class="sm:flex">
-        <ul>
-          <li v-for="n in nav" :key="n.routeName" class="px-2 hover:text-green sm:inline-block">
-            <router-link :to="{name: n.routeName}">{{ n.title }}</router-link>
+    <nav :class="isOpen ? 'block' : 'hidden'" class="sm:flex mt-3 sm:mt-0">
+        <ul class="sm:space-x-4">
+          <li v-for="n in nav" :key="n.routeName" class="hover:text-green sm:inline-block">
+            <router-link :to="{name: n.routeName}" @click.native="isOpen = false" class="py-2">{{ n.title }}</router-link>
           </li>
         </ul>
     </nav>
-    <div class="flex justify-between space-x-1 mt-2 sm:mt-0">
-      <button class="btn-sm btn-green flex-1 sm:flex-auto">Sign Up</button>
+    <div class="hidden sm:flex justify-between space-x-1 mt-0">
+      <button class="btn-sm btn-green flex-1 sm:flex-auto">Create an Accont</button>
       <button class="btn-sm btn-green-invert flex-1 sm:flex-auto">Sign In</button>
     </div>
   </header>

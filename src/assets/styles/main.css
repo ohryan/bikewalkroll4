@@ -8,6 +8,14 @@ body {
     @apply text-current
 }
 
+.content a { 
+    @apply text-green
+}
+
+.content a:hover { 
+    @apply text-green-700 underline
+}
+
 /* Headings */
 h1 {
     @apply w-full text-4xl font-serif leading-none
@@ -81,4 +89,14 @@ ul.school-list li a {
 
 ul.school-list li:last-of-type a {
     @apply pb-0 border-none
+}
+
+/* static pages */
+.static-page .content h2 {
+    @apply text-green mb-3
+}
+
+.static-page .content p,
+.static-page .content ul {
+    @apply mb-3
 }

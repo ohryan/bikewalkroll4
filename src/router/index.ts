@@ -1,10 +1,18 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import VueAnalytics from 'vue-analytics';
+import { component } from 'vue/types/umd';
+// views
 import Home from '@/views/Home.vue';
 import NotFound from '@/views/NotFound.vue';
 import School from '@/views/School.vue';
-import { component } from 'vue/types/umd';
+import Schools from '@/views/Schools.vue';
+import Organization from '@/views/Organization.vue';
+import Organizations from '@/views/Organizations.vue';
+import Division from '@/views/Division.vue';
+import Divisions from '@/views/Divisions.vue';
+import About from '@/views/About.vue';
+import Faq from '@/views/Faq.vue';
 
 Vue.use(VueRouter);
 
@@ -21,10 +29,48 @@ const routes: RouteConfig[] = [
       title: 'BikeWalkRoll | How Did You Get to School Today?',
     },
   },
+  // SCHOOLS
   {
     path: '/school/:id(\\d+)',
     component: School,
     name: 'school',
+  },
+  {
+    path: '/schools/',
+    component: Schools,
+    name: 'organizationLlist',
+  },
+  // ORGANIZATIONS
+  {
+    path: '/organizations',
+    component: Organizations,
+    name: 'organizationLlist',
+  },
+  {
+    path: '/organization/:id',
+    component: Organization,
+    name: 'organization',
+  },
+  // DIVISIONS
+  {
+    path: '/divisions',
+    component: Divisions,
+    name: 'divisionsList',
+  },
+  {
+    path: '/division/:id',
+    component: Division,
+    name: 'division',
+  },
+  {
+    path: '/faq',
+    component: Faq,
+    name: 'faq',
+  },
+  {
+    path: '/about',
+    component: About,
+    name: 'about',
   },
   {
     path: '*',

@@ -92,11 +92,13 @@ ul.school-list li:last-of-type a {
 }
 
 /* static pages */
-.static-page .content h2 {
+.static-page h1,
+.static-page h2,
+.static-page h3  {
     @apply text-green mb-3
 }
 
-.static-page .content p,
-.static-page .content ul {
+.static-page p,
+.static-page ul {
     @apply mb-3
 }

@@ -11,15 +11,21 @@
       title="Here's how it works"
       :dark="false"
     >
-      <div class="flex flex-wrap">
-        <div class="w-full lg:w-1/3">
-          BOX ONE
+      <div class="sm:flex justify-between space-x-2">
+        <div class="my-3">
+          <img src="/img/how-it-works-step1.jpg" alt="Find Your School" class="my-1 w-full sm:w-auto">
+          <h4>1 - Find your School on the map above</h4>
+          <p>Don't see it? <a href="/users/add?action=addschool">Add a school</a></p>
         </div>
-        <div class="w-full lg:w-1/3">
-          BOX TWO
+        <div class="my-3">
+          <img src="/img/how-it-works-step2.jpg" alt="Do a survey" class="my-1 w-full sm:w-auto">
+          <h4>2 - Do a 30 second survey</h4>
+          <p>It couldn't be simpler. <a href="#" data-toggle="modal" data-target="#surveyLearnModal">Learn about surveys</a></p>
         </div>
-        <div class="w-full lg:w-1/3">
-          BOX THREE
+        <div class="my-3">
+          <img src="/img/how-it-works-step3.jpg" alt="See your score!" class="my-1 w-full sm:w-auto">
+          <h4>3 - See your BikeWalkRoll score</h4>
+          <p><a href="#" data-toggle="modal" data-target="#scoresLearnModal">Learn how the score works</a></p>
         </div>
       </div>
     </ContentMain>

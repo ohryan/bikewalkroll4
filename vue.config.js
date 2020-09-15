@@ -5,7 +5,6 @@ module.exports = {
         host: 'dev.bikewalkroll.org',
         https: true,
     },
-
     pluginOptions: {
       s3Deploy: {
         registry: undefined,
@@ -24,5 +23,10 @@ module.exports = {
         pluginVersion: '4.0.0-rc3',
         uploadConcurrency: 5
       }
+    },
+    // actually enable lazyloading
+    // https://medium.com/@mrodal/how-to-make-lazy-loading-actually-work-in-vue-cli-3-7f3f88cfb102
+    chainWebpack: (config) => {
+      config.plugins.delete('prefetch')
     }
 }

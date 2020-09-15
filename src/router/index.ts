@@ -1,18 +1,11 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import VueAnalytics from 'vue-analytics';
-import { component } from 'vue/types/umd';
+
 // views
 import Home from '@/views/Home.vue';
 import NotFound from '@/views/NotFound.vue';
 import School from '@/views/School.vue';
-import Schools from '@/views/Schools.vue';
-import Organization from '@/views/Organization.vue';
-import Organizations from '@/views/Organizations.vue';
-import Division from '@/views/Division.vue';
-import Divisions from '@/views/Divisions.vue';
-import About from '@/views/About.vue';
-import Faq from '@/views/Faq.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +20,7 @@ const routes: RouteConfig[] = [
     component: Home,
     meta: {
       title: 'BikeWalkRoll | How Did You Get to School Today?',
+      description: 'Our 30 second surveys help understand how students travel to school.',
     },
   },
   // SCHOOLS
@@ -37,40 +31,40 @@ const routes: RouteConfig[] = [
   },
   {
     path: '/schools/',
-    component: Schools,
-    name: 'organizationLlist',
+    name: 'schoolList',
+    component: () => import(/* webpackChunkName: "school-index" */ '@/views/Schools.vue'),
   },
   // ORGANIZATIONS
   {
     path: '/organizations',
-    component: Organizations,
-    name: 'organizationLlist',
+    name: 'organizationList',
+    component: () => import(/* webpackChunkName: "organization-index" */ '@/views/Organizations.vue'),
   },
   {
     path: '/organization/:id',
-    component: Organization,
     name: 'organization',
+    component: () => import(/* webpackChunkName: "organization" */ '@/views/Organization.vue'),
   },
   // DIVISIONS
   {
     path: '/divisions',
-    component: Divisions,
     name: 'divisionsList',
+    component: () => import(/* webpackChunkName: "division-index" */ '@/views/Divisions.vue'),
   },
   {
     path: '/division/:id',
-    component: Division,
     name: 'division',
+    component: () => import(/* webpackChunkName: "division" */ '@/views/Division.vue'),
   },
   {
     path: '/faq',
-    component: Faq,
     name: 'faq',
+    component: () => import(/* webpackChunkName: "static-pages" */ '@/views/Faq.vue'),
   },
   {
     path: '/about',
-    component: About,
     name: 'about',
+    component: () => import(/* webpackChunkName: "static-pages" */ '@/views/About.vue'),
   },
   {
     path: '*',

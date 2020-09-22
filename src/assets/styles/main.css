@@ -83,22 +83,25 @@ h4 {
     @apply bg-green text-white   
 }
 
-ul.school-list li a {
-    @apply block py-2 border-b 
-}
-
-ul.school-list li:last-of-type a {
-    @apply pb-0 border-none
+ul.school-list {
+    li a {
+        @apply block py-2 border-b 
+    }
+    li:last-of-type a {
+        @apply pb-0 border-none
+    }
 }
 
 /* static pages */
-.static-page h1,
-.static-page h2,
-.static-page h3  {
-    @apply text-green mb-3
-}
+.static-page {
+    .content, 
+    .content-gray {
+        h1, h2, h3 {
+            @apply text-green mb-3
+        }
+    }
 
-.static-page p,
-.static-page ul {
-    @apply mb-3
+    p, ul {
+        @apply mb-3
+    }
 }

@@ -21,8 +21,14 @@ import schoolMap from '@/utils/schoolMap';
 export default {
   name: 'Map',
   props: {
-      lat: null,
-      lng: null,
+      lat: {
+        default: null,
+        type: Number,
+      },
+      lng: {
+        default: null,
+        type: Number,
+      },
   },
   methods: {
     async getGeolocation() {
@@ -40,14 +46,10 @@ export default {
 
       });
     },
-  },
-  async mounted() {
-    try {
-      const google = await gmapsInit();
-      const location = await this.getGeolocation();
+    drawMap(centerLat, centerLng) {
       const sm = new schoolMap(this.$el, {
-        lat: this.lat ?? location.coords.latitude,
-        lng: this.lng ?? location.coords.longitude,
+        lat: centerLat,
+        lng: centerLng,
         zoomControl: true,
         fullscreenControl: true,
         idleCallback: async () => {
@@ -55,7 +57,26 @@ export default {
           sm.addMarkers(markers);
         },
       });
+    },
+  },
+  async mounted() {
+    try {
+      const google = await gmapsInit();
+      let centerLat = this.lat;
+      let centerLng = this.lng;
+
+      // no lat/lng not passed in as a prop
+      if (centerLat === null && centerLng === null) {
+        const location = await this.getGeolocation();
+        centerLat = location.coords.latitude;
+        centerLng = location.coords.longitude;
+      }
+
+      this.drawMap(centerLat, centerLng);
+
     } catch (error) {
+      // draw the map in winipeg when there's an error.
+      this.drawMap(49.895077, -97.138451);
       console.error(error);
     }
   },

@@ -16,7 +16,7 @@ import schoolMap from '@/utils/schoolMap';
 // 5. re-implement loader
 // 6. re-implement search box
 // 7. get lat/lng from browser - DONE
-// 8. re-implement infoboxes
+// 8. re-implement infoboxes - DONE
 
 export default {
   name: 'Map',

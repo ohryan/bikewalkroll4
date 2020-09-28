@@ -1,8 +1,16 @@
+import schoolMapMarkerInfo from '@/utils/schoolMapMarkerInfo';
+
 export default class schoolMapMarker {
     constructor(schoolMap, markerData) {
         this.schoolMap = schoolMap;
         this.markerData = markerData;
-        return this.drawMaker();
+        
+        let marker = this.drawMaker();
+        let markerInfo = new schoolMapMarkerInfo(this.markerData);
+
+        marker.addListener('click', () => {
+            markerInfo.open(schoolMap, marker);
+        })        
     }
 
     // get icon options
@@ -36,7 +44,8 @@ export default class schoolMapMarker {
 			map: this.schoolMap.mapObj,
 			labelContent: this.markerData.score,
 			labelAnchor: new google.maps.Point(12, 28),
-			icon: this.getIconOptions()
+            icon: this.getIconOptions(),
+            title: this.markerData.name,
 		});        
     }
 

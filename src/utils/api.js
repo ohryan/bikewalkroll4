@@ -25,4 +25,12 @@ export const fetchLatestSchools = async() => {
             console.error(e);
             return {};
         });
+};
+
+export const fetchDivisions = async() => {
+    // TODO: implement this as an api call
+    return [
+        {id: 1, school: 'Home School', city: 'Winnipeg', region: 'Manitoba', country: 'Canada'},
+        {id: 2, school: 'Fun School', city: 'Toronto', region: 'Ontario', country: 'Canada'},
+    ]
 }
